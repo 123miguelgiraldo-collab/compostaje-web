@@ -1,0 +1,188 @@
+        :root {
+            --bg: #12240f;
+            --card: #ffffff;
+            --accent: #4ade80;
+            --muted: #313131;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #008e68 0%, #80c155 100%);
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 980px;
+        }
+
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        p.lead {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 18px;
+        }
+
+        .card {
+            background: radial-gradient(1000px 300px at 10% 10%, rgba(74, 222, 128, 0.04), transparent), var(--card);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.7);
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        input[type=number],
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgb(230, 228, 228);
+            color: inherit;
+            font-size: 15px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 0;
+            background: linear-gradient(90deg, var(--accent), #22c55e);
+            color: #012018;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .result {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+
+        .small {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        footer {
+            margin-top: 12px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .preset-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .chip {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 8px;
+            border-radius: 999px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        @media (max-width:920px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 12px;
+            }
+        }
+
+        .note {
+            font-size: 13px;
+            color: #000000;
+        }
+
+        .big {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .muted-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        
+.ticker {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(0, 255, 162, 0.152), transparent);
+    padding: 15px 15px;
+    box-shadow: 0 4px 12px rgb(150, 255, 244);
+    margin: 12px 0;
+}
+
+.ticker__wrap {
+    display: inline-block;
+    white-space: nowrap;
+    will-change: transform;
+    animation: tickerMove linear infinite;
+    animation-duration: 18s;
+}
+
+.ticker__item {
+    display: inline-block;
+    padding-right: 48px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #cfeede;
+}
+
+
+@keyframes tickerMove {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

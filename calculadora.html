@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Compostaje</title>
+    <link rel="stylesheet" href="calculadora.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div>
+                <h1>Calculadora de Compostaje</h1>
+                <p class="lead">Calcula cuánto material seco, agua y volumen estimado necesitas para un compost
+                    equilibrado.</p>
+            </div>
+            <div class="ticker" aria-live="polite" title="Letrero informativo">
+            <div class="ticker__wrap" id="myTicker">
+                <span class="ticker__item">Tip: Mantén el C:N entre 25:1 y 30:1 para compostar rápido. ·</span>
+                <span class="ticker__item">Recuerda mezclar hojas secas y material organico y humedecer al 50–60% ·</span>
+                <span class="ticker__item">Si huele a amoníaco, añade hojas secas o cartón triturado ·</span>
+                <span class="ticker__item">Recuerda que es en capas primero seco luego tierra y por ultimo los organicos y repetirlo nuevamente</span>
+            </div>
+        </div>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <label>Material verde — masa (kg)</label>
+                <div class="row">
+                    <input id="massGreen" type="number" min="0" step="0.1" value="5">
+                    <select id="typeGreen">
+                        <option value="15" selected>Restos de cocina (15:1)</option>
+                        <option value="20">Césped fresco (20:1)</option>
+                        <option value="25">Café / borras (25:1)</option>
+                    </select>
+                </div>
+
+                <label style="margin-top:12px">Material seco — masa (kg) (0 para calcular)</label>
+                <div class="row">
+                    <input id="massBrown" type="number" min="0" step="0.1" value="0">
+                    <select id="typeBrown">
+                        <option value="60" selected>Hojas secas (60:1)</option>
+                        <option value="80">Paja (80:1)</option>
+                        <option value="150">Papel / cartón (150:1)</option>
+                    </select>
+                </div>
+
+                <label style="margin-top:12px">C:N objetivo</label>
+                <input id="targetCN" type="number" value="30">
+
+                <button id="calcBtn">Calcular</button>
+                <div class="result" id="results">
+                    <div class="small">Resultados aparecerán aquí.</div>
+                </div>
+                <div class="note" style="margin-top:10px">
+                    <strong>Nota:</strong> Esta es una guía práctica basada en proporciones típicas de carbono y
+                    nitrógeno.
+                </div>
+            </div>
+
+            <aside class="card">
+                <h3 style="margin:0 0 8px 0">Presets y consejos</h3>
+                <p class="small">Pulsa un tipo de material para ajustar los valores.</p>
+                <div class="preset-list">
+                    <div class="chip" data-g="15">Verduras (15)</div>
+                    <div class="chip" data-g="20">Césped (20)</div>
+                    <div class="chip" data-gb="60">Hojas (60)</div>
+                    <div class="chip" data-gb="80">Paja (80)</div>
+                    <div class="chip" data-gb="150">Papel (150)</div>
+                </div>
+
+                <section style="margin-top:12px">
+                    <h4 style="margin:8px 0">Consejos</h4>
+                    <ul class="small">
+                        <li>Mantén una mezcla equilibrada de materiales secos y húmedos.</li>
+                        <li>Gira el compost cada 1–3 semanas para airearlo.</li>
+                        <li>Si huele fuerte, añade más material seco.</li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+
+        <footer class="card" style="margin-top:12px">
+            <div class="small">Hecho con cariño 💚 — Funciona sin dependencias externas.  
+                <a href="proceso.html"><button>Volver</button></a></div>
+        </footer>
+    </div>
+
+    <script src="calculadora.js"></script>
+</body>
+
+</html>
